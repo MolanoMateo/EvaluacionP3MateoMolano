@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EvaluacionP3MateoMolano.MainPage" Title="Exchange Rates"
+             xmlns:local="clr-namespace:EvaluacionP3MateoMolano"
+             x:DataType="local:MainPageViewModel">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
+            <Label Text="1 CHF" SemanticProperties.HeadingLevel="Level1" FontSize="48" FontAttributes="Bold" WidthRequest="145" HorizontalOptions="Center">
+                
+            </Label>
+            <Label Text="{Binding UsdRate}"
+                   x:Name="UsdRate"
+                   SemanticProperties.HeadingLevel="Level1"
+                   FontSize="32"
+                   WidthRequest="145"
+                   HorizontalOptions="Center"/>
+            <Label Text="EUR"
+                   x:Name="{Binding EurRate}"
+                   SemanticProperties.HeadingLevel="Level1"
+                   FontSize="32"
+                   WidthRequest="145"
+                   HorizontalOptions="Center"/>
+            <Label Text="AUD"
+                   x:Name="{Binding AudRate}"
+                   SemanticProperties.HeadingLevel="Level1"
+                   FontSize="32"
+                   WidthRequest="145"
+                   HorizontalOptions="Center"/>
+            <Button x:Name="Actualizar"
+                    Text="Update Rates"
+                    SemanticProperties.Hint="Cargar datos"
+                    Command="{Binding ExchangeMateoMolanoCom}"
+                    HorizontalOptions="Center"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
